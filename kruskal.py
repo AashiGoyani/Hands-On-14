@@ -49,11 +49,6 @@ graph = Graph(vertices)
 graph.edges = edges
 
 mst = graph.kruskal()
-print("Edges in the Minimum Spanning Tree:")
-for edge in mst:
-    u, v, weight = edge
-    print(f"{u} -- {v} (weight: {weight})")
-print()
 print("The Output:")
 expected_output = ["g -- h (weight: 1)", "i -- c (weight: 2)", "g -- f (weight: 2)", "a -- b (weight: 4)",
                    "c -- f (weight: 4)", "c -- d (weight: 7)", "h -- a (weight: 8)", "d -- e (weight: 9)"]
