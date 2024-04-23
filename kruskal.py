@@ -42,15 +42,14 @@ class Graph:
 
 # Example graph from the first image
 vertices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
-edges = [('a', 'b', 4), ('h', 'b', 8), ('b', 'c', 8), ('i', 'c', 2), ('c', 'd', 7), ('g', 'i', 6), ('f', 'd', 14),
-         ('g', 'f', 2), ('g', 'h', 1), ('d', 'e', 9), ('f', 'e', 10)]
+edges = [('a', 'b', 4), ('h', 'b', 11), ('b', 'c', 8), ('i', 'c', 2), ('c', 'd', 7), ('g', 'i', 6), ('f', 'd', 14),
+         ('g', 'f', 2), ('g', 'h', 1), ('d', 'e', 9), ('f', 'e', 10),('f', 'c', 4)]
 
 graph = Graph(vertices)
 graph.edges = edges
 
 mst = graph.kruskal()
-print("The Output:")
-expected_output = ["g -- h (weight: 1)", "i -- c (weight: 2)", "g -- f (weight: 2)", "a -- b (weight: 4)",
-                   "c -- f (weight: 4)", "c -- d (weight: 7)", "h -- a (weight: 8)", "d -- e (weight: 9)"]
-for output in expected_output:
-    print(output)
+print("Edges in the Minimum Spanning Tree:")
+for edge in mst:
+    u, v, weight = edge
+    print(f"{u} -- {v} (weight: {weight})")
